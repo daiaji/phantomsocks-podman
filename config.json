@@ -1,0 +1,39 @@
+{
+  "profiles": [
+          "default.conf"
+  ],
+  "services": [
+  {
+   "name": "socks",
+   "protocol": "socks",
+   "address": "0.0.0.0:1681"
+  }
+  ],
+  "interfaces": [
+  {
+   "name": "default",
+   "device": "eth0",
+   "dns": "udp://host.containers.internal:5335",
+   "hint": "w-seq,https,w-md5"
+  },
+  {
+   "name": "v6",
+   "device": "eth0",
+   "dns": "udp://host.containers.internal:5335",
+   "hint": "ipv6,w-seq,w-md5"
+  },
+  {
+   "name": "df",
+   "device": "eth0",
+   "dns": "udp://host.containers.internal:5335",
+   "hint": "df"
+  },
+  {
+   "name":"http",
+   "device": "eth0",
+   "dns": "udp://host.containers.internal:5335",
+   "hint": "http,ttl",
+   "ttl": 15
+  }
+   ]
+}
