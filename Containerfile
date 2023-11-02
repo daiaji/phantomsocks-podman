@@ -1,4 +1,4 @@
-FROM --platform=${TARGETPLATFORM} golang:alpine as builder
+FROM golang:alpine as builder
 
 WORKDIR /root
 RUN apk add --update git \
@@ -6,7 +6,7 @@ RUN apk add --update git \
 	&& cd ./phantomsocks \
 	&& go build -tags rawsocket
 
-FROM --platform=${TARGETPLATFORM} alpine:latest
+FROM alpine:latest
 WORKDIR /etc/phantomsocks
 
 RUN apk add --no-cache ca-certificates
